@@ -66,7 +66,7 @@ final class TamagotchiSelectionCell: BaseCollectionViewCell {
         imageView.image = UIImage(named: tamagotchi.image)
         nicknameButton.configuration?.attributedTitle = AttributedString(
             tamagotchi.nickname,
-            attributes: AttributeContainer([.foregroundColor: UIColor.primaryColor, .font: UIFont.systemFont(ofSize: 14, weight: .heavy)])
+            attributes: AttributeContainer([.foregroundColor: UIColor.primaryColor, .font: UIFont.systemFont(ofSize: 12, weight: .heavy)])
         )
     }
 }

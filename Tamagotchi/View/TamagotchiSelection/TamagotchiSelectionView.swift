@@ -6,16 +6,8 @@
 //
 
 import UIKit
-
-class TamagotchiSelectionView: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
+import SnapKit
+import Then
 
 final class TamagotchiSelectionView: BaseView {
     
@@ -23,20 +15,12 @@ final class TamagotchiSelectionView: BaseView {
     lazy var collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout()).then {
         $0.backgroundColor = .clear
         $0.showsVerticalScrollIndicator = false
+        $0.register(TamagotchiSelectionCell.self, forCellWithReuseIdentifier: TamagotchiSelectionCell.identifier)
     }
-    
-    let image = UIImageView()
     
     // MARK: - methods
     override func configureUI() {
         backgroundColor = .primaryBackgroundColor
-        
-        addSubview(image)
-        image.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-        }
-        
-        image.image = UIImage(named: "_1_1")
     }
     
     override func configureHierarchy() {
@@ -52,11 +36,11 @@ final class TamagotchiSelectionView: BaseView {
     
     private func createLayout() -> UICollectionViewFlowLayout {
         let layout = UICollectionViewFlowLayout()
-        let lineSpacing: CGFloat = 12
+        let lineSpacing: CGFloat = 28
         let horizontalInset: CGFloat = 24
-        let interitemSpacing: CGFloat = 12
-        let width = (UIScreen.main.bounds.size.width - (horizontalInset * 2) - (interitemSpacing * 3)) / 4
-        layout.itemSize = CGSize(width: width, height: width)
+        let interitemSpacing: CGFloat = 28
+        let width = (UIScreen.main.bounds.size.width - (horizontalInset * 2) - (interitemSpacing * 2)) / 3
+        layout.itemSize = CGSize(width: width, height: width + 36.0)
         layout.sectionInset = UIEdgeInsets(top: 0, left: horizontalInset, bottom: 0, right: horizontalInset)
         layout.minimumLineSpacing = lineSpacing
         layout.minimumInteritemSpacing = interitemSpacing
