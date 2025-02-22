@@ -22,8 +22,8 @@ final class TamagotchiSelectionCell: BaseCollectionViewCell {
         var config = UIButton.Configuration.filled()
         config.background.strokeWidth = 0.5
         config.background.strokeColor = .primaryColor
-        config.background.cornerRadius = 6
-        config.background.backgroundColor = .clear
+        config.background.cornerRadius = 4
+        config.background.backgroundColor = .secondaryBackgroundColor
         config.contentInsets = NSDirectionalEdgeInsets(top: 4, leading: 4, bottom: 4, trailing: 4)
         $0.configuration = config
     }
@@ -58,7 +58,7 @@ final class TamagotchiSelectionCell: BaseCollectionViewCell {
             $0.trailing.lessThanOrEqualToSuperview()
             $0.bottom.equalToSuperview()
             $0.centerX.equalToSuperview()
-            $0.height.equalTo(32)
+            $0.height.equalTo(28)
         }
     }
     
@@ -66,7 +66,7 @@ final class TamagotchiSelectionCell: BaseCollectionViewCell {
         imageView.image = UIImage(named: tamagotchi.image)
         nicknameButton.configuration?.attributedTitle = AttributedString(
             tamagotchi.nickname,
-            attributes: AttributeContainer([.foregroundColor: UIColor.primaryColor, .font: UIFont.systemFont(ofSize: 12, weight: .heavy)])
+            attributes: AttributeContainer([.foregroundColor: UIColor.primaryColor, .font: UIFont.boldSystemFont(ofSize: 12)])
         )
     }
 }

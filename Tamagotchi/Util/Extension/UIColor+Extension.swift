@@ -15,4 +15,8 @@ extension UIColor {
     static var primaryBackgroundColor: UIColor {
         return UIColor(red: 245/255, green: 252/255, blue: 252/255, alpha: 1)
     }
+    
+    static var secondaryBackgroundColor: UIColor {
+        return UIColor(red: 238/255, green: 249/255, blue: 249/255, alpha: 1)
+    }
 }

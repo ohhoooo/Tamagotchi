@@ -29,8 +29,8 @@ final class TamagotchiSelectionView: BaseView {
     
     override func configureConstraints() {
         collectionView.snp.makeConstraints {
-            $0.verticalEdges.equalTo(safeAreaLayoutGuide)
-            $0.horizontalEdges.equalToSuperview()
+            $0.top.equalTo(safeAreaLayoutGuide)
+            $0.horizontalEdges.bottom.equalToSuperview()
         }
     }
     
@@ -40,7 +40,7 @@ final class TamagotchiSelectionView: BaseView {
         let horizontalInset: CGFloat = 24
         let interitemSpacing: CGFloat = 28
         let width = (UIScreen.main.bounds.size.width - (horizontalInset * 2) - (interitemSpacing * 2)) / 3
-        layout.itemSize = CGSize(width: width, height: width + 36.0)
+        layout.itemSize = CGSize(width: width, height: width + 32.0)
         layout.sectionInset = UIEdgeInsets(top: 0, left: horizontalInset, bottom: 0, right: horizontalInset)
         layout.minimumLineSpacing = lineSpacing
         layout.minimumInteritemSpacing = interitemSpacing
