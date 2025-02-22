@@ -22,6 +22,7 @@
 		372215322D69D0E000C0788E /* BaseCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372215312D69D0E000C0788E /* BaseCollectionViewCell.swift */; };
 		372215342D69D0F400C0788E /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372215332D69D0F400C0788E /* BaseViewModel.swift */; };
 		372215362D69D11E00C0788E /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372215352D69D11E00C0788E /* BaseTableViewCell.swift */; };
+		3722153A2D69D21400C0788E /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372215392D69D21400C0788E /* UIColor+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		372215312D69D0E000C0788E /* BaseCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCollectionViewCell.swift; sourceTree = "<group>"; };
 		372215332D69D0F400C0788E /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		372215352D69D11E00C0788E /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		372215392D69D21400C0788E /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 		3722152A2D69D0A500C0788E /* Util */ = {
 			isa = PBXGroup;
 			children = (
+				372215382D69D20800C0788E /* Extension */,
 				3722152C2D69D0AC00C0788E /* Base */,
 			);
 			path = Util;
@@ -136,6 +139,14 @@
 				372215332D69D0F400C0788E /* BaseViewModel.swift */,
 			);
 			path = Base;
+			sourceTree = "<group>";
+		};
+		372215382D69D20800C0788E /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				372215392D69D21400C0788E /* UIColor+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,6 +235,7 @@
 				372215362D69D11E00C0788E /* BaseTableViewCell.swift in Sources */,
 				372215302D69D0CC00C0788E /* BaseViewController.swift in Sources */,
 				3722150F2D69CD2500C0788E /* AppDelegate.swift in Sources */,
+				3722153A2D69D21400C0788E /* UIColor+Extension.swift in Sources */,
 				372215102D69CD2500C0788E /* SceneDelegate.swift in Sources */,
 				372215342D69D0F400C0788E /* BaseViewModel.swift in Sources */,
 				372215262D69CF1400C0788E /* TamagotchiSelectionViewController.swift in Sources */,
