@@ -28,6 +28,9 @@
 		372215422D69D5B800C0788E /* TamagotchiSelectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372215412D69D5B800C0788E /* TamagotchiSelectionViewModel.swift */; };
 		372215462D69E0A400C0788E /* Tamagotchi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372215452D69E0A400C0788E /* Tamagotchi.swift */; };
 		372215482D69E4B200C0788E /* Tamagotchi.json in Resources */ = {isa = PBXBuildFile; fileRef = 372215472D69E4B200C0788E /* Tamagotchi.json */; };
+		3722154C2D6A1E8600C0788E /* TamagotchiDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3722154B2D6A1E8600C0788E /* TamagotchiDetailView.swift */; };
+		3722154E2D6A1EA000C0788E /* TamagotchiDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3722154D2D6A1EA000C0788E /* TamagotchiDetailViewController.swift */; };
+		372215502D6A209E00C0788E /* TamagotchiDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3722154F2D6A209E00C0788E /* TamagotchiDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +53,9 @@
 		372215412D69D5B800C0788E /* TamagotchiSelectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamagotchiSelectionViewModel.swift; sourceTree = "<group>"; };
 		372215452D69E0A400C0788E /* Tamagotchi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tamagotchi.swift; sourceTree = "<group>"; };
 		372215472D69E4B200C0788E /* Tamagotchi.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Tamagotchi.json; sourceTree = "<group>"; };
+		3722154B2D6A1E8600C0788E /* TamagotchiDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamagotchiDetailView.swift; sourceTree = "<group>"; };
+		3722154D2D6A1EA000C0788E /* TamagotchiDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamagotchiDetailViewController.swift; sourceTree = "<group>"; };
+		3722154F2D6A209E00C0788E /* TamagotchiDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamagotchiDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				372215282D69CF2300C0788E /* TamagotchiSelection */,
+				3722154A2D6A1E6400C0788E /* TamagotchiDetail */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -168,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				372215412D69D5B800C0788E /* TamagotchiSelectionViewModel.swift */,
+				3722154F2D6A209E00C0788E /* TamagotchiDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -178,6 +186,15 @@
 				372215452D69E0A400C0788E /* Tamagotchi.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		3722154A2D6A1E6400C0788E /* TamagotchiDetail */ = {
+			isa = PBXGroup;
+			children = (
+				3722154B2D6A1E8600C0788E /* TamagotchiDetailView.swift */,
+				3722154D2D6A1EA000C0788E /* TamagotchiDetailViewController.swift */,
+			);
+			path = TamagotchiDetail;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -270,8 +287,11 @@
 				3722150F2D69CD2500C0788E /* AppDelegate.swift in Sources */,
 				3722153A2D69D21400C0788E /* UIColor+Extension.swift in Sources */,
 				372215422D69D5B800C0788E /* TamagotchiSelectionViewModel.swift in Sources */,
+				3722154C2D6A1E8600C0788E /* TamagotchiDetailView.swift in Sources */,
 				372215102D69CD2500C0788E /* SceneDelegate.swift in Sources */,
 				372215342D69D0F400C0788E /* BaseViewModel.swift in Sources */,
+				3722154E2D6A1EA000C0788E /* TamagotchiDetailViewController.swift in Sources */,
+				372215502D6A209E00C0788E /* TamagotchiDetailViewModel.swift in Sources */,
 				3722153C2D69D55D00C0788E /* TamagotchiSelectionView.swift in Sources */,
 				372215262D69CF1400C0788E /* TamagotchiSelectionViewController.swift in Sources */,
 				3722153E2D69D58700C0788E /* TamagotchiSelectionCell.swift in Sources */,
