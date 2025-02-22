@@ -6,25 +6,51 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
-class TamagotchiSelectionViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        view.backgroundColor = .white
+final class TamagotchiSelectionViewController: BaseViewController {
+    
+    // MARK: - properties
+    private let tamagotchiSelectionView = TamagotchiSelectionView()
+    private let viewModel = TamagotchiSelectionViewModel()
+    
+    private let disposeBag = DisposeBag()
+    
+    // MARK: - life cycles
+    override func loadView() {
+        view = tamagotchiSelectionView
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - methods
+    override func bind() {
+        let input = TamagotchiSelectionViewModel.Input(
+            modelSelected: tamagotchiSelectionView.collectionView.rx.modelSelected(Tamagotchi.self)
+        )
+        
+        let output = viewModel.transform(input: input)
+        
+        output.items
+            .bind(to: tamagotchiSelectionView.collectionView.rx.items(
+                cellIdentifier: TamagotchiSelectionCell.identifier,
+                cellType: TamagotchiSelectionCell.self)
+            ) { (row, element, cell) in
+                cell.bind(tamagotchi: element)
+            }
+            .disposed(by: disposeBag)
+        
+        output.modelSelected
+            .subscribe(with: self) { owner, value in
+                if value.nickname != "준비중이에요" {
+                    let tamagotchiDetailVM = TamagotchiDetailViewModel(tamagotchi: value)
+                    let tamagotchiDetailVC = TamagotchiDetailViewController(viewModel: tamagotchiDetailVM)
+                    
+                    tamagotchiDetailVC.modalTransitionStyle = .crossDissolve
+                    tamagotchiDetailVC.modalPresentationStyle = .overCurrentContext
+                    
+                    owner.present(tamagotchiDetailVC, animated: true)
+                }
+            }
+            .disposed(by: disposeBag)
     }
-    */
-
 }
