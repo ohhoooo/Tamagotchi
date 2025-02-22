@@ -22,6 +22,12 @@ final class TamagotchiSelectionViewController: BaseViewController {
         view = tamagotchiSelectionView
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        configureNavigation()
+    }
+    
     // MARK: - methods
     override func bind() {
         let input = TamagotchiSelectionViewModel.Input(
@@ -40,7 +46,7 @@ final class TamagotchiSelectionViewController: BaseViewController {
             .disposed(by: disposeBag)
         
         output.modelSelected
-            .subscribe(with: self) { owner, value in
+            .bind(with: self) { owner, value in
                 if value.nickname != "준비중이에요" {
                     let tamagotchiDetailVM = TamagotchiDetailViewModel(tamagotchi: value)
                     let tamagotchiDetailVC = TamagotchiDetailViewController(viewModel: tamagotchiDetailVM)
@@ -52,5 +58,9 @@ final class TamagotchiSelectionViewController: BaseViewController {
                 }
             }
             .disposed(by: disposeBag)
+    }
+    
+    private func configureNavigation() {
+        navigationItem.title = "다마고치 선택하기"
     }
 }
