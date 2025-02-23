@@ -32,6 +32,7 @@ final class SettingViewModel: BaseViewModel {
         tapOkButton
             .bind {
                 UserDefaultsManager.isSelected = false
+                UserDefaultsManager.nickname = "대장"
                 UserDefaultsManager.tamagotchis = [
                     Tamagotchi(image: "1-1", nickname: "따끔따끔 다마고치", rice: 0, water: 0, isSelected: false),
                     Tamagotchi(image: "2-1", nickname: "방실방실 다마고치", rice: 0, water: 0, isSelected: false),

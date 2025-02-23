@@ -10,11 +10,15 @@ import Foundation
 enum UserDefaultsManager {
     enum Key: String {
         case isSelected
+        case nickname
         case tamagotchis
     }
     
     @PrimitiveTypeStorage(key: Key.isSelected.rawValue, empty: false)
     static var isSelected: Bool
+    
+    @PrimitiveTypeStorage(key: Key.nickname.rawValue, empty: "대장")
+    static var nickname: String
     
     @CustomTypeStorage(key: Key.tamagotchis.rawValue, empty: nil)
     static var tamagotchis: [Tamagotchi]?

@@ -62,5 +62,7 @@ final class TamagotchiSelectionViewController: BaseViewController {
     
     private func configureNavigation() {
         navigationItem.title = "다마고치 선택하기"
+        navigationController?.navigationBar.tintColor = .primaryColor
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.primaryColor, .font: UIFont.boldSystemFont(ofSize: 17)]
     }
 }
