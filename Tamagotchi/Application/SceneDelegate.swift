@@ -16,7 +16,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = UINavigationController(rootViewController: TamagotchiSelectionViewController())
+        
+        if UserDefaultsManager.isSelected {
+            window?.rootViewController = UINavigationController(rootViewController: MainViewController())
+        } else {
+            window?.rootViewController = UINavigationController(rootViewController: TamagotchiSelectionViewController())
+        }
+        
         window?.makeKeyAndVisible()
     }
 
