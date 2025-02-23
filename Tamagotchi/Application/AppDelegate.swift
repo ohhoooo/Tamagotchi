@@ -13,7 +13,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        if UserDefaultsManager.tamagotchis == nil {
+            let tamagotchis = [
+                Tamagotchi(image: "1-1", nickname: "따끔따끔 다마고치", rice: 0, water: 0, isSelected: false),
+                Tamagotchi(image: "2-1", nickname: "방실방실 다마고치", rice: 0, water: 0, isSelected: false),
+                Tamagotchi(image: "3-1", nickname: "반짝반짝 다마고치", rice: 0, water: 0, isSelected: false)
+            ]
+            
+            UserDefaultsManager.tamagotchis = tamagotchis
+        }
+        
         return true
     }
 

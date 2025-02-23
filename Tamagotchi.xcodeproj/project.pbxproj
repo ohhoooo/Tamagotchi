@@ -33,6 +33,8 @@
 		372215502D6A209E00C0788E /* TamagotchiDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3722154F2D6A209E00C0788E /* TamagotchiDetailViewModel.swift */; };
 		372215542D6A47C000C0788E /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372215532D6A47C000C0788E /* MainView.swift */; };
 		372215562D6A47E700C0788E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372215552D6A47E700C0788E /* MainViewController.swift */; };
+		372215582D6B159A00C0788E /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372215572D6B159A00C0788E /* MainViewModel.swift */; };
+		3722155C2D6B249600C0788E /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3722155B2D6B249600C0788E /* UserDefaultsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +62,8 @@
 		3722154F2D6A209E00C0788E /* TamagotchiDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TamagotchiDetailViewModel.swift; sourceTree = "<group>"; };
 		372215532D6A47C000C0788E /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		372215552D6A47E700C0788E /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		372215572D6B159A00C0788E /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		3722155B2D6B249600C0788E /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +185,7 @@
 			children = (
 				372215412D69D5B800C0788E /* TamagotchiSelectionViewModel.swift */,
 				3722154F2D6A209E00C0788E /* TamagotchiDetailViewModel.swift */,
+				372215572D6B159A00C0788E /* MainViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -189,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				372215452D69E0A400C0788E /* Tamagotchi.swift */,
+				3722155A2D6B248B00C0788E /* PersistentStorage */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -209,6 +215,14 @@
 				372215552D6A47E700C0788E /* MainViewController.swift */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		3722155A2D6B248B00C0788E /* PersistentStorage */ = {
+			isa = PBXGroup;
+			children = (
+				3722155B2D6B249600C0788E /* UserDefaultsManager.swift */,
+			);
+			path = PersistentStorage;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -301,6 +315,7 @@
 				3722150F2D69CD2500C0788E /* AppDelegate.swift in Sources */,
 				3722153A2D69D21400C0788E /* UIColor+Extension.swift in Sources */,
 				372215422D69D5B800C0788E /* TamagotchiSelectionViewModel.swift in Sources */,
+				3722155C2D6B249600C0788E /* UserDefaultsManager.swift in Sources */,
 				3722154C2D6A1E8600C0788E /* TamagotchiDetailView.swift in Sources */,
 				372215102D69CD2500C0788E /* SceneDelegate.swift in Sources */,
 				372215342D69D0F400C0788E /* BaseViewModel.swift in Sources */,
@@ -308,6 +323,7 @@
 				372215502D6A209E00C0788E /* TamagotchiDetailViewModel.swift in Sources */,
 				372215542D6A47C000C0788E /* MainView.swift in Sources */,
 				3722153C2D69D55D00C0788E /* TamagotchiSelectionView.swift in Sources */,
+				372215582D6B159A00C0788E /* MainViewModel.swift in Sources */,
 				372215262D69CF1400C0788E /* TamagotchiSelectionViewController.swift in Sources */,
 				3722153E2D69D58700C0788E /* TamagotchiSelectionCell.swift in Sources */,
 				372215562D6A47E700C0788E /* MainViewController.swift in Sources */,
