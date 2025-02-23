@@ -8,10 +8,10 @@
 import Foundation
 
 struct Tamagotchi: Codable {
-    let image: String
+    var image: String
     let nickname: String
-    let rice: Int
-    let water: Int
+    var rice: Int
+    var water: Int
     var isSelected: Bool
     
     var lv: Int {
@@ -25,5 +25,13 @@ struct Tamagotchi: Codable {
         default:
             return 10
         }
+    }
+    
+    init(image: String = "noImage", nickname: String = "준비중이에요", rice: Int = 0, water: Int = 0, isSelected: Bool = false) {
+        self.image = image
+        self.nickname = nickname
+        self.rice = rice
+        self.water = water
+        self.isSelected = isSelected
     }
 }

@@ -55,7 +55,15 @@ final class MainViewModel: BaseViewModel {
                     tamagotchi.rice += rice
                 }
                 
+                switch tamagotchi.lv {
+                case 10:
+                    tamagotchi.image = tamagotchi.image.prefix(2).description + "9"
+                default:
+                    tamagotchi.image = tamagotchi.image.prefix(2).description + String(tamagotchi.lv)
+                }
+                
                 if let index = UserDefaultsManager.tamagotchis?.firstIndex(where: { $0.isSelected == true }) {
+                    UserDefaultsManager.tamagotchis?[index].image = tamagotchi.image
                     UserDefaultsManager.tamagotchis?[index].rice = tamagotchi.rice
                     owner.tamagotchi.accept(tamagotchi)
                 }
@@ -72,7 +80,15 @@ final class MainViewModel: BaseViewModel {
                     tamagotchi.water += water
                 }
                 
+                switch tamagotchi.lv {
+                case 10:
+                    tamagotchi.image = tamagotchi.image.prefix(2).description + "9"
+                default:
+                    tamagotchi.image = tamagotchi.image.prefix(2).description + String(tamagotchi.lv)
+                }
+                
                 if let index = UserDefaultsManager.tamagotchis?.firstIndex(where: { $0.isSelected == true }) {
+                    UserDefaultsManager.tamagotchis?[index].image = tamagotchi.image
                     UserDefaultsManager.tamagotchis?[index].water = tamagotchi.water
                     owner.tamagotchi.accept(tamagotchi)
                 }
