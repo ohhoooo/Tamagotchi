@@ -6,24 +6,50 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
-class SettingNicknameViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+final class SettingNicknameViewController: BaseViewController {
+    
+    // MARK: - properties
+    private let settingNicknameView = SettingNicknameView()
+    private let viewModel = SettingNicknameViewModel()
+    
+    private let disposeBag = DisposeBag()
+    
+    // MARK: - life cycles
+    override func loadView() {
+        view = settingNicknameView
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: - methods
+    override func configureStyle() {
+        configureNavigation()
     }
-    */
-
+    
+    override func bind() {
+        let input = SettingNicknameViewModel.Input(
+            changedTextFieldText: settingNicknameView.textField.rx.text.changed,
+            tapSaveBarButtonItem: settingNicknameView.saveBarButtonItem.rx.tap
+        )
+        
+        let output = viewModel.transform(input: input)
+        
+        output.nickname
+            .bind(with: self) { owner, value in
+                owner.settingNicknameView.bind(nickname: value)
+            }
+            .disposed(by: disposeBag)
+        
+        output.saveCompletion
+            .bind(with: self) { owner, _ in
+                owner.navigationController?.popViewController(animated: true)
+            }
+            .disposed(by: disposeBag)
+    }
+    
+    private func configureNavigation() {
+        navigationItem.title = "대장님 이름 정하기"
+        navigationItem.rightBarButtonItem = settingNicknameView.saveBarButtonItem
+    }
 }
