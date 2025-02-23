@@ -32,7 +32,11 @@ final class SettingViewModel: BaseViewModel {
         tapOkButton
             .bind {
                 UserDefaultsManager.isSelected = false
-                UserDefaultsManager.tamagotchis = nil
+                UserDefaultsManager.tamagotchis = [
+                    Tamagotchi(image: "1-1", nickname: "따끔따끔 다마고치", rice: 0, water: 0, isSelected: false),
+                    Tamagotchi(image: "2-1", nickname: "방실방실 다마고치", rice: 0, water: 0, isSelected: false),
+                    Tamagotchi(image: "3-1", nickname: "반짝반짝 다마고치", rice: 0, water: 0, isSelected: false)
+                ]
             }
             .disposed(by: disposeBag)
         
