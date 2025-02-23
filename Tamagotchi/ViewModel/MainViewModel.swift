@@ -17,10 +17,12 @@ final class MainViewModel: BaseViewModel {
         let waterTextFieldText: ControlEvent<String?>
         let tapRiceButton: ControlEvent<Void>
         let tapWaterButton: ControlEvent<Void>
+        let tapSettingBarButtonItem: ControlEvent<Void>
     }
     
     struct Output {
         let tamagotchi: BehaviorRelay<Tamagotchi>
+        let tapSettingBarButtonItem: ControlEvent<Void>
     }
     
     private let disposeBag = DisposeBag()
@@ -96,7 +98,8 @@ final class MainViewModel: BaseViewModel {
             .disposed(by: disposeBag)
         
         return Output(
-            tamagotchi: tamagotchi
+            tamagotchi: tamagotchi,
+            tapSettingBarButtonItem: input.tapSettingBarButtonItem
         )
     }
 }

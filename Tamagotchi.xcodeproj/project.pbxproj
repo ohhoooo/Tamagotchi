@@ -41,6 +41,9 @@
 		3722158A2D6BA53300C0788E /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 372215892D6BA53300C0788E /* SettingViewModel.swift */; };
 		3722158C2D6BAD0E00C0788E /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3722158B2D6BAD0E00C0788E /* Setting.swift */; };
 		372215902D6BADFF00C0788E /* Setting.json in Resources */ = {isa = PBXBuildFile; fileRef = 3722158F2D6BADFF00C0788E /* Setting.json */; };
+		379C17472D6BC3B700A8A40C /* SettingNicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379C17462D6BC3B700A8A40C /* SettingNicknameView.swift */; };
+		379C17492D6BC3C000A8A40C /* SettingNicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379C17482D6BC3C000A8A40C /* SettingNicknameViewController.swift */; };
+		379C174B2D6BC43700A8A40C /* SettingNicknameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379C174A2D6BC43700A8A40C /* SettingNicknameViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +79,9 @@
 		372215892D6BA53300C0788E /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
 		3722158B2D6BAD0E00C0788E /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
 		3722158F2D6BADFF00C0788E /* Setting.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Setting.json; sourceTree = "<group>"; };
+		379C17462D6BC3B700A8A40C /* SettingNicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingNicknameView.swift; sourceTree = "<group>"; };
+		379C17482D6BC3C000A8A40C /* SettingNicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingNicknameViewController.swift; sourceTree = "<group>"; };
+		379C174A2D6BC43700A8A40C /* SettingNicknameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingNicknameViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +157,7 @@
 				3722154A2D6A1E6400C0788E /* TamagotchiDetail */,
 				372215522D6A479E00C0788E /* Main */,
 				372215822D6BA41500C0788E /* Setting */,
+				379C17452D6BC39000A8A40C /* SettingNickname */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -201,6 +208,7 @@
 				3722154F2D6A209E00C0788E /* TamagotchiDetailViewModel.swift */,
 				372215572D6B159A00C0788E /* MainViewModel.swift */,
 				372215892D6BA53300C0788E /* SettingViewModel.swift */,
+				379C174A2D6BC43700A8A40C /* SettingNicknameViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -249,6 +257,15 @@
 				372215832D6BA46D00C0788E /* SettingViewController.swift */,
 			);
 			path = Setting;
+			sourceTree = "<group>";
+		};
+		379C17452D6BC39000A8A40C /* SettingNickname */ = {
+			isa = PBXGroup;
+			children = (
+				379C17462D6BC3B700A8A40C /* SettingNicknameView.swift */,
+				379C17482D6BC3C000A8A40C /* SettingNicknameViewController.swift */,
+			);
+			path = SettingNickname;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,10 +360,13 @@
 				3722153A2D69D21400C0788E /* UIColor+Extension.swift in Sources */,
 				3722158C2D6BAD0E00C0788E /* Setting.swift in Sources */,
 				372215842D6BA46D00C0788E /* SettingViewController.swift in Sources */,
+				379C17472D6BC3B700A8A40C /* SettingNicknameView.swift in Sources */,
 				372215422D69D5B800C0788E /* TamagotchiSelectionViewModel.swift in Sources */,
 				3722155C2D6B249600C0788E /* UserDefaultsManager.swift in Sources */,
 				3722154C2D6A1E8600C0788E /* TamagotchiDetailView.swift in Sources */,
+				379C17492D6BC3C000A8A40C /* SettingNicknameViewController.swift in Sources */,
 				372215102D69CD2500C0788E /* SceneDelegate.swift in Sources */,
+				379C174B2D6BC43700A8A40C /* SettingNicknameViewModel.swift in Sources */,
 				372215342D69D0F400C0788E /* BaseViewModel.swift in Sources */,
 				3722154E2D6A1EA000C0788E /* TamagotchiDetailViewController.swift in Sources */,
 				372215502D6A209E00C0788E /* TamagotchiDetailViewModel.swift in Sources */,
