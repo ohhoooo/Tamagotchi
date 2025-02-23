@@ -7,12 +7,23 @@
 
 import Foundation
 
-struct Tamagotchi: Decodable {
+struct Tamagotchi: Codable {
     let image: String
     let nickname: String
+    let rice: Int
+    let water: Int
+    var isSelected: Bool
     
-    init(image: String = "noImage", nickname: String = "준비중이에요") {
-        self.image = image
-        self.nickname = nickname
+    var lv: Int {
+        let lv = Int(((Double(rice) / 5.0) + (Double(water) / 2.0)) / 10.0)
+        
+        switch lv {
+        case 0...1:
+            return 1
+        case 2...9:
+            return lv
+        default:
+            return 10
+        }
     }
 }
