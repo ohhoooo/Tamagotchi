@@ -1,0 +1,17 @@
+[
+    {
+        "icon": "pencil",
+        "title": "내 이름 설정하기",
+        "accessory": "chevron.forward"
+    },
+    {
+        "icon": "moon.fill",
+        "title": "다마고치 변경하기",
+        "accessory": "chevron.forward"
+    },
+    {
+        "icon": "arrow.clockwise",
+        "title": "데이터 초기화",
+        "accessory": "chevron.forward"
+    }
+]
