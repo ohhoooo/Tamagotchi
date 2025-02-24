@@ -13,6 +13,7 @@ final class MainViewModel: BaseViewModel {
     
     // MARK: - properties
     struct Input {
+        let willAppearView: PublishRelay<Void>
         let riceTextFieldText: ControlEvent<String?>
         let waterTextFieldText: ControlEvent<String?>
         let tapRiceButton: ControlEvent<Void>
@@ -21,18 +22,26 @@ final class MainViewModel: BaseViewModel {
     }
     
     struct Output {
+        let nickname: BehaviorRelay<String>
         let tamagotchi: BehaviorRelay<Tamagotchi>
         let tapSettingBarButtonItem: ControlEvent<Void>
     }
     
     private let disposeBag = DisposeBag()
     
+    private let nickname = BehaviorRelay(value: UserDefaultsManager.nickname)
     private let tamagotchi = BehaviorRelay(value: UserDefaultsManager.tamagotchis?.filter { $0.isSelected == true }.first ?? Tamagotchi())
     private var riceText = ""
     private var waterText = ""
     
     // MARK: - methods
     func transform(input: Input) -> Output {
+        input.willAppearView
+            .bind(with: self) { owner, _ in
+                owner.nickname.accept(UserDefaultsManager.nickname)
+            }
+            .disposed(by: disposeBag)
+        
         input.riceTextFieldText
             .skip(1)
             .bind(with: self) { owner, value in
@@ -67,6 +76,7 @@ final class MainViewModel: BaseViewModel {
                 if let index = UserDefaultsManager.tamagotchis?.firstIndex(where: { $0.isSelected == true }) {
                     UserDefaultsManager.tamagotchis?[index].image = tamagotchi.image
                     UserDefaultsManager.tamagotchis?[index].rice = tamagotchi.rice
+                    owner.nickname.accept(UserDefaultsManager.nickname)
                     owner.tamagotchi.accept(tamagotchi)
                 }
             }
@@ -92,12 +102,14 @@ final class MainViewModel: BaseViewModel {
                 if let index = UserDefaultsManager.tamagotchis?.firstIndex(where: { $0.isSelected == true }) {
                     UserDefaultsManager.tamagotchis?[index].image = tamagotchi.image
                     UserDefaultsManager.tamagotchis?[index].water = tamagotchi.water
+                    owner.nickname.accept(UserDefaultsManager.nickname)
                     owner.tamagotchi.accept(tamagotchi)
                 }
             }
             .disposed(by: disposeBag)
         
         return Output(
+            nickname: nickname,
             tamagotchi: tamagotchi,
             tapSettingBarButtonItem: input.tapSettingBarButtonItem
         )
