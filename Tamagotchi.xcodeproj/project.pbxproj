@@ -44,6 +44,7 @@
 		379C17472D6BC3B700A8A40C /* SettingNicknameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379C17462D6BC3B700A8A40C /* SettingNicknameView.swift */; };
 		379C17492D6BC3C000A8A40C /* SettingNicknameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379C17482D6BC3C000A8A40C /* SettingNicknameViewController.swift */; };
 		379C174B2D6BC43700A8A40C /* SettingNicknameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379C174A2D6BC43700A8A40C /* SettingNicknameViewModel.swift */; };
+		379C17912D6BDED000A8A40C /* SettingTamagotchiViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 379C178E2D6BDED000A8A40C /* SettingTamagotchiViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,7 @@
 		379C17462D6BC3B700A8A40C /* SettingNicknameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingNicknameView.swift; sourceTree = "<group>"; };
 		379C17482D6BC3C000A8A40C /* SettingNicknameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingNicknameViewController.swift; sourceTree = "<group>"; };
 		379C174A2D6BC43700A8A40C /* SettingNicknameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingNicknameViewModel.swift; sourceTree = "<group>"; };
+		379C178E2D6BDED000A8A40C /* SettingTamagotchiViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingTamagotchiViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 				372215522D6A479E00C0788E /* Main */,
 				372215822D6BA41500C0788E /* Setting */,
 				379C17452D6BC39000A8A40C /* SettingNickname */,
+				379C178F2D6BDED000A8A40C /* SettingTamagotchi */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -268,6 +271,14 @@
 			path = SettingNickname;
 			sourceTree = "<group>";
 		};
+		379C178F2D6BDED000A8A40C /* SettingTamagotchi */ = {
+			isa = PBXGroup;
+			children = (
+				379C178E2D6BDED000A8A40C /* SettingTamagotchiViewController.swift */,
+			);
+			path = SettingTamagotchi;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -355,6 +366,7 @@
 			files = (
 				372215362D69D11E00C0788E /* BaseTableViewCell.swift in Sources */,
 				372215462D69E0A400C0788E /* Tamagotchi.swift in Sources */,
+				379C17912D6BDED000A8A40C /* SettingTamagotchiViewController.swift in Sources */,
 				372215302D69D0CC00C0788E /* BaseViewController.swift in Sources */,
 				3722150F2D69CD2500C0788E /* AppDelegate.swift in Sources */,
 				3722153A2D69D21400C0788E /* UIColor+Extension.swift in Sources */,
