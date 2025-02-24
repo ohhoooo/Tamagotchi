@@ -6,15 +6,31 @@
 //
 
 import UIKit
+import SnapKit
+import Then
 
-class SettingView: UIView {
-
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
+final class SettingView: BaseView {
+    
+    // MARK: - properties
+    let tableView = UITableView().then {
+        $0.separatorStyle = .none
+        $0.backgroundColor = .clear
+        $0.register(SettingCell.self, forCellReuseIdentifier: SettingCell.identifier)
     }
-    */
-
+    
+    // MARK: - methods
+    override func configureUI() {
+        backgroundColor = .primaryBackgroundColor
+    }
+    
+    override func configureHierarchy() {
+        addSubview(tableView)
+    }
+    
+    override func configureConstraints() {
+        tableView.snp.makeConstraints {
+            $0.top.equalTo(safeAreaLayoutGuide)
+            $0.horizontalEdges.bottom.equalToSuperview()
+        }
+    }
 }
