@@ -6,24 +6,67 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
-class MainViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+final class MainViewController: BaseViewController {
+    
+    // MARK: - properties
+    private let mainView = MainView()
+    private let viewModel = MainViewModel()
+    
+    private let disposeBag = DisposeBag()
+    
+    private let willApearView = PublishRelay<Void>()
+    
+    // MARK: - life cycles
+    override func loadView() {
+        view = mainView
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        willApearView.accept(())
     }
-    */
-
+    
+    // MARK: - methods
+    override func bind() {
+        let input = MainViewModel.Input(
+            willAppearView: willApearView,
+            riceTextFieldText: mainView.riceTextField.rx.text.changed,
+            waterTextFieldText: mainView.waterTextField.rx.text.changed,
+            tapRiceButton: mainView.riceButton.rx.tap,
+            tapWaterButton: mainView.waterButton.rx.tap,
+            tapSettingBarButtonItem: mainView.settingBarButtonItem.rx.tap
+        )
+        
+        let output = viewModel.transform(input: input)
+        
+        output.nickname
+            .bind(with: self) { owner, value in
+                owner.mainView.bind(nickname: value)
+                owner.configureNavigation(nickname: value)
+            }
+            .disposed(by: disposeBag)
+        
+        output.tamagotchi
+            .bind(with: self) { owner, value in
+                owner.mainView.bind(tamagotchi: value)
+            }
+            .disposed(by: disposeBag)
+        
+        output.tapSettingBarButtonItem
+            .bind(with: self) { owner, _ in
+                owner.navigationController?.pushViewController(SettingViewController(), animated: true)
+            }
+            .disposed(by: disposeBag)
+    }
+    
+    private func configureNavigation(nickname: String) {
+        navigationItem.title = "\(nickname)님의 다마고치"
+        navigationItem.rightBarButtonItem = mainView.settingBarButtonItem
+        navigationController?.navigationBar.tintColor = .primaryColor
+        navigationController?.navigationBar.titleTextAttributes = [.foregroundColor: UIColor.primaryColor, .font: UIFont.boldSystemFont(ofSize: 17)]
+    }
 }
